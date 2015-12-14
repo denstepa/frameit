@@ -28,10 +28,16 @@ module Frameit
 
       values = default.fastlane_deep_merge(specific || {})
 
+
+
       change_paths_to_absolutes!(values)
       validate_values(values)
 
       values
+    end
+
+    def data
+      @data
     end
 
     # Use absolute paths instead of relative

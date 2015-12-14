@@ -36,7 +36,7 @@ module Frameit
     private
 
     def store_result
-      output_path = screenshot.path.gsub('.png', '_framed.png').gsub('.PNG', '_framed.png')
+      output_path = fetch_config['path'] + fetch_config['devise'] + screenshot.basename.gsub('.png', '_framed.png').gsub('.PNG', '_framed.png')
       image.format "png"
       image.write output_path
       Helper.log.info "Added frame: '#{File.expand_path(output_path)}'".green
